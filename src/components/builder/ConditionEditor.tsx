@@ -144,7 +144,7 @@ function ConditionRow({
       targetFieldType: newTarget.type,
       operator: newOperator,
       value: defaultValueFor(newTarget.type, newOperator),
-    })
+    } as Partial<Condition>)
 
     if (condition.effect === 'show' || condition.effect === 'hide') {
       const cyclePath = getCyclePath(currentField.id, newTargetId, allFields)
@@ -164,7 +164,7 @@ function ConditionRow({
     onChange({
       operator: op,
       value: defaultValueFor(condition.targetFieldType, op),
-    })
+    } as Partial<Condition>)
   }
 
   return (
@@ -253,7 +253,7 @@ export default function ConditionEditor({ field, allFields, onChange }: Props) {
   function updateCondition(id: string, partial: Partial<Condition>) {
     onChange({
       ...field,
-      conditions: field.conditions.map(c => c.id === id ? { ...c, ...partial } : c),
+      conditions: field.conditions.map(c => c.id === id ? { ...c, ...partial } as Condition : c),
     })
   }
 

@@ -196,12 +196,3 @@ export function getCyclePath(
 
   return dfs(toFieldId, [fromFieldId])
 }
-
-// Convenience boolean wrapper used for cheap checks.
-export function wouldCreateCycle(
-  fromFieldId: string,
-  toFieldId: string,
-  fields: Field[],
-): boolean {
-  return getCyclePath(fromFieldId, toFieldId, fields) !== null
-}

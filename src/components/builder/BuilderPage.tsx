@@ -20,7 +20,6 @@ import type { Field, FormRecord } from '../../types/form'
 import FieldPalette from './FieldPalette'
 import BuilderCanvas from './BuilderCanvas'
 import ConfigPanel from './ConfigPanel'
-import ConditionEditor from './ConditionEditor'
 
 // When reordering canvas items, strip canvas-droppable so only field cards compete.
 // When dropping palette items, keep all droppables so the paper also catches drops.
